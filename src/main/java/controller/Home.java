@@ -14,8 +14,4 @@ public class Home {
     String home() {
         return "Hello World!";
     }
-
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(Home.class, args);
-    }
 }
