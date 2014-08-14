@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'idea'
 
-mainClassName = "controller.Home"
+mainClassName = "main.Application"
 
 repositories {
   mavenCentral()
