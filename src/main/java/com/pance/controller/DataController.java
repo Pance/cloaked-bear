@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 @RestController
 @EnableAutoConfiguration
 @RequestMapping("/data")
@@ -20,9 +22,11 @@ public class DataController {
 
     @RequestMapping("/")
     @ResponseBody
-    String data() {
+    Category[] data() throws ThingDoesNotExistException {
         // Should return a list of category ids
-        return "some json representing a list of category ids for the user";
+
+        List<Category> categoryList = categoryDAO.getCategories();
+        return categoryList.toArray(new Category[categoryList.size()]);
     }
 
     @RequestMapping("/{category}")
