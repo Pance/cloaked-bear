@@ -1,7 +1,8 @@
 package com.pance.main;
 
-import com.pance.controller.Data;
+import com.pance.controller.DataController;
 import com.pance.controller.Home;
+import com.pance.dao.CategoryDAOImpl;
 import org.h2.jdbcx.JdbcDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -18,7 +19,7 @@ public class Application {
     @Autowired
     JdbcDataSource dataSource;
     public static void main(String[] args) {
-        Object[] classes = new Object[]{ Home.class, Data.class };
+        Object[] classes = new Object[]{ Home.class, DataController.class, CategoryDAOImpl.class};
 
         //JdbcDataSource dataSource = new JdbcDataSource();
         //dataSource.setURL("jdbc:h2:mem:");
