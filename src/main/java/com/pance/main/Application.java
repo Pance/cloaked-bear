@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan
+@ComponentScan("com.pance")
 public class Application {
     @Autowired
     JdbcDataSource dataSource;
