@@ -25,7 +25,6 @@ public class CategoryDAOImpl implements CategoryDAO {
         categories.add(new Category(new Date(), "Lols!"));
     }
 
-
     @Override
     public List<Category> getCategories() {
         return categories;
