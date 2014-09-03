@@ -4,10 +4,7 @@ import com.pance.dao.CategoryDAO;
 import com.pance.exception.ThingDoesNotExistException;
 import com.pance.obj.Category;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.json.*;
 
@@ -44,7 +41,7 @@ public class DataController {
     @RequestMapping(value = "/{category}", method = RequestMethod.GET)
     @ResponseBody
     Category dataCategory(@PathVariable("category") String category) throws ThingDoesNotExistException {
-        // Should return a list of the entries for given category
+        // Should return a list of the entries for given data category
 
         Category c = categoryDAO.getCategoryByName(category);
         return c;
